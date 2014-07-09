@@ -327,11 +327,11 @@ gulp.task('sass-main', function (cb) {
 	// While serving, this task opens a continuous watch
 	return ( !lrStarted ?
 			gulp.src([
-				'assets/sass/*.{scss, sass, css}',
-				'!assets/sass/*ie.{scss, sass, css}'
+				'assets/sass/*.{sass, scss, css}',
+				'!assets/sass/*ie.{sass, scss, css}'
 			])
 			:
-			watch({ glob: 'assets/sass/**/*.{scss, sass, css}', emitOnGlob: false, name: 'SCSS-MAIN', silent: true })
+			watch({ glob: 'assets/sass/**/*.{sass, scss, css}', emitOnGlob: false, name: 'SASS-MAIN', silent: true })
 				.pipe(plumber())
 				.pipe(sassgraph(['assets/sass']))
 		)
@@ -354,10 +354,10 @@ gulp.task('sass-ie', function (cb) {
 	// While serving, this task opens a continuous watch
 	return ( !lrStarted ?
 			gulp.src([
-				'assets/sass/ie.{scss, sass, css}'
+				'assets/sass/ie.{sass, scss, css}'
 			])
 			:
-			watch({ glob: 'assets/sass/**/ie.{scss, sass, css}', emitOnGlob: false, name: 'SCSS-IE', silent: true })
+			watch({ glob: 'assets/sass/**/ie.{sass, scss, css}', emitOnGlob: false, name: 'SASS-IE', silent: true })
 				.pipe(plumber())
 				.pipe(sassgraph(['assets/sass']))
 		)
